@@ -7,7 +7,7 @@ import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
 import image from "../images/Almost-Home-1.jpeg";
 
 
-const storiesResponse = await fetch('http://localhost:1337/api/stories?populate=*');
+const storiesResponse = await fetch('https://admin.blueengineering.dev/api/stories?populate=*');
 const stories = await storiesResponse.json();
 console.log(stories)
 ---

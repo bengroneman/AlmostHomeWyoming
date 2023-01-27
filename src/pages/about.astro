@@ -2,7 +2,7 @@
 import Hero from '../components/Hero.svelte';
 import Layout from '../layouts/Layout.astro';
 
-const aboutResponse = await fetch('http://localhost:1337/api/about-page?populate=*');
+const aboutResponse = await fetch('https://admin.blueengineering.dev/api/about-page?populate=*');
 const aboutContent = await aboutResponse.json();
 const image_url = "../images/Almost-Home-1.jpeg";
 console.log(aboutContent);

@@ -5,11 +5,11 @@ import Hero from '../components/Hero.svelte'
 import Cta from '../components/Cta.svelte';
 import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
 
-const homeResponse = await fetch('http://localhost:1337/api/home-page?populate=*');
+const homeResponse = await fetch('https://admin.blueengineering.dev/api/home-page?populate=*');
 const homePage = await homeResponse.json();
 console.log(homePage)
 
-const storyResponse = await fetch('http://localhost:1337/api/stories?populate=*');
+const storyResponse = await fetch('https://admin.blueengineering.dev/api/stories?populate=*');
 const stories = await storyResponse.json();
 console.log(stories.data[1]);
 ---
