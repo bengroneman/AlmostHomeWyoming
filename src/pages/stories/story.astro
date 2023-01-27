@@ -1,0 +1,21 @@
+---
+export async function getStaticPaths() {
+  const storiesResponse = await fetch('http://localhost:1337/api/stories?populate=*');
+  const stories = await storiesResponse.json();
+  console.log(stories.data)
+
+  return stories.data.map(({ Slug, Title, Body }) => {
+    return {
+      params: { Slug },
+      props: { Title, Body },
+    };
+  });
+}
+import Layout from '../../layouts/Layout.astro'
+
+const { Slug, Title, Body } = Astro.props;
+const storyItem = await fetch(`http://localhost:1337/stories?slug=${slug}`).then(x  => x.json())
+console.log(storyItem)
+---
+
+<h1>storyItem.Title</h1>

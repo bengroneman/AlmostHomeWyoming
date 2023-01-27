@@ -1,0 +1,52 @@
+---
+import Hero from '../components/Hero.svelte';
+import Layout from '../layouts/Layout.astro';
+
+const aboutResponse = await fetch('http://localhost:1337/api/about-page?populate=*');
+const aboutContent = await aboutResponse.json();
+const image_url = "../images/Almost-Home-1.jpeg";
+console.log(aboutContent);
+---
+
+<Layout title={aboutContent.data.attributes.Title}>
+	<main>
+      <Hero
+        headline={aboutContent.data.attributes.Hero.Header}
+        body={aboutContent.data.attributes.Hero.SubHeader}
+      />
+    <div class="relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2">
+        <div class="lg:inset-y-0 lg:left-0">
+        <img
+          class="relative aspect-square"
+          src={image_url}
+          alt="almost home yard sale event with family"
+        />
+      </div>
+      <div class="lg:col-start-2 lg:pl-8">
+        <div class="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0">
+          <h2 class="leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
+            People helping people
+          </h2>
+          <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Our Mission
+          </h3>
+          <div class="mt-5 prose prose-indigo text-gray-900">
+            {aboutContent.data.attributes.Quote.map((item) => {
+              return (
+                <blockquote key={item.Author}>
+                  {item.Body}
+                  <p>
+                    <em>- {item.Author}</em>
+                  </p>
+                </blockquote>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+</Layout>
+
+

@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.svelte';
+
+const contactResponse = await fetch('http://localhost:1337/api/contact-page?populate=*');
+const contactContent = await contactResponse.json();
+const image_url = "../images/Almost-Home-1.jpeg";
+console.log(contactContent);
+---
+<Layout>
+    <Hero title={contactContent.data.attributes.Hero.Header}></Hero>
+    <div class="bg-white max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg">
+      <div class="px-4 py-5 sm:px-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          Ways to get ahold of us
+        </h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">
+          Phone, Email, etc..
+        </p>
+      </div>
+      <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
+        <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Building Location</dt>
+            <dd class="mt-1 text-sm text-gray-900">
+              {contactContent.data.attributes.Address}
+            </dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">
+              Phone Number
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900">
+            {contactContent.data.attributes.PhoneNumber}
+            </dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Email</dt>
+            <dd class="mt-1 text-sm text-gray-900">{contactContent.data.attributes.Email}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+</Layout

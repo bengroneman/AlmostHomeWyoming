@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.svelte';
+import Hero from '../components/Hero.svelte'
+import Cta from '../components/Cta.svelte';
+import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
+
+const homeResponse = await fetch('http://localhost:1337/api/home-page?populate=*');
+const homePage = await homeResponse.json();
+console.log(homePage)
+
+const storyResponse = await fetch('http://localhost:1337/api/stories?populate=*');
+const stories = await storyResponse.json();
+console.log(stories.data[1]);
+---
+<Layout title={homePage.data.attributes.Title}>
+	<main>
+	<div class="wrapper">
+      <Hero
+        headline={homePage.data.attributes.Hero.Header}
+        body={homePage.data.attributes.Hero.SubHeader}
+      />
+      <div class="relative my-12 py-12">
+        <div class="relative flex justify-center">
+          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+            the Almost Home Organization
+          </h2>
+        </div>
+      </div>
+
+      <div class="py-12 my-12 bg-white">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+          <h2 class="sr-only">About </h2>
+          <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
+            {homePage.data.attributes.CTAs.map((item, index) => (
+              <Cta
+                key={index}
+                header={item.Header}
+                body={item.Body}
+                link={item.link}
+              />
+            ))}
+          </dl>
+        </div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto">
+        <Hero title="Our stories"></Hero>
+        <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+          {stories.data.map((story, index) => (
+            <Card story={story.attributes} key={index}></Card>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-sky-100 py-12 my-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
+          <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
+            <span class="block">{homePage.data.attributes.Title}</span>
+            <span class="block text-sky-600">
+              {homePage.data.attributes.Hero.SubHeader}
+            </span>
+          </h2>
+          <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div class="inline-flex rounded-md shadow">
+              <PrimaryBtn link="/donate">
+                Donate
+              </PrimaryBtn>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+	</main>
+</Layout>

@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.svelte';
+
+const donateResponse = await fetch('http://localhost:1337/api/donate-page?populate=*');
+const donateContent = await donateResponse.json();
+const image_url = "../images/Almost-Home-1.jpeg";
+console.log(donateContent);
+---
+<Layout>
+    <Hero title={donateContent.data.attributes.Hero.Header}></Hero>
+    <div class="bg-white max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg">
+      <div class="px-4 py-5 sm:px-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          Ways to donate
+        </h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">
+          Check, Paypal, card
+        </p>
+      </div>
+      <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
+        <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">By Mail</dt>
+            <dd class="mt-1 text-sm text-gray-900">
+              P.O. Box 44, Lander, WY, 82520.
+            </dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">
+              Meridian Trust
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900">
+              Meridian Trust Bank , 873 Main St., Lander, WY, 82520
+            </dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Paypal</dt>
+            <dd class="mt-1 text-sm text-gray-900"></dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Card</dt>
+            <dd class="mt-1 text-sm text-gray-900">
+              <a
+                href="https://buy.stripe.com/14k8zbdg00bX6e4eUU"
+                target="_blank"
+                class="w-full inline-flex items-center justify-center py-1 px-3 bg-sky-100 border border-transparent rounded-md shadow-md text-base font-medium text-sky-800 hover:bg-gray-50 sm:w-auto"
+              >
+                Donate
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+</Layout
