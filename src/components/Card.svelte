@@ -2,7 +2,7 @@
 export let story = {}
 </script>
 <li class="link-card">
-	<a href={story.Slug}>
+	<a href={"/stories/" + story.Slug}>
 		<h2>
 			{story.Title}
 			<span>&rarr;</span>

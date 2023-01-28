@@ -6,7 +6,6 @@ import Cta from '../components/Cta.svelte';
 import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
 import image from "../images/Almost-Home-1.jpeg";
 
-
 const storiesResponse = await fetch('https://admin.blueengineering.dev/api/stories?populate=*');
 const stories = await storiesResponse.json();
 console.log(stories)

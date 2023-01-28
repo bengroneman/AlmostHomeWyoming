@@ -2,9 +2,9 @@
 export async function getStaticPaths() {
   const storiesResponse = await fetch('https://admin.blueengineering.dev/api/stories?populate=*');
   const stories = await storiesResponse.json();
-  console.log(stories.data)
 
-  return stories.data.map(({ Slug, Title, Body }) => {
+  return stories.data.map(({attributes}) => {
+  const { Slug, Title, Body } = attributes;
     return {
       params: { Slug },
       props: { Slug, Title, Body },
@@ -14,8 +14,8 @@ export async function getStaticPaths() {
 import Layout from '../../layouts/Layout.astro'
 
 const { Slug, Title, Body } = Astro.props;
-const storyItem = await fetch(`https://admin.blueengineering.dev/stories?slug=${Slug}`).then(x  => x.json())
-console.log(storyItem)
 ---
-
-<h1>storyItem.Title</h1>
+<Layout title={Title}>
+    <h1>{Title}</h1>
+    {Body}
+</Layout>

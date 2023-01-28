@@ -5,7 +5,6 @@ import Hero from '../components/Hero.svelte';
 const donateResponse = await fetch('https://admin.blueengineering.dev/api/donate-page?populate=*');
 const donateContent = await donateResponse.json();
 const image_url = "../images/Almost-Home-1.jpeg";
-console.log(donateContent);
 ---
 <Layout>
     <Hero title={donateContent.data.attributes.Hero.Header}></Hero>
