@@ -7,11 +7,9 @@ import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
 
 const homeResponse = await fetch('https://admin.blueengineering.dev/api/home-page?populate=*');
 const homePage = await homeResponse.json();
-console.log(homePage)
 
 const storyResponse = await fetch('https://admin.blueengineering.dev/api/stories?populate=*');
 const stories = await storyResponse.json();
-console.log(stories.data[1]);
 ---
 <Layout title={homePage.data.attributes.Title}>
 	<main>

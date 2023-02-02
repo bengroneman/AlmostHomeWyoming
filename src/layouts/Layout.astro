@@ -1,5 +1,7 @@
 ---
 import Navigation from '../components/global/Navigation.svelte';
+import Footer from '../components/global/Footer.svelte';
+
 export interface Props {
 	title: string;
 }
@@ -26,11 +28,12 @@ const { title } = Astro.props;
 
           gtag('config', 'G-P8Q7Z18VEB');
         </script>
-        <Navigation></Navigation>
+        <Navigation />
         <div class="relative pb-16 sm:pb-24">
             <main class="mx-auto">
                 <slot />
             </main>
         </div>
+        <Footer />
 	</body>
 </html>
