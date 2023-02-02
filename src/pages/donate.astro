@@ -7,7 +7,7 @@ const donateContent = await donateResponse.json();
 const image_url = "../images/Almost-Home-1.jpeg";
 ---
 <Layout>
-    <Hero title={donateContent.data.attributes.Hero.Header}></Hero>
+    <Hero headline={donateContent.data.attributes.Hero.Header} body={donateContent.data.attributes.Hero.SubHeader}></Hero>
     <div class="bg-white max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg">
       <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
