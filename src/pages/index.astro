@@ -4,6 +4,7 @@ import Card from '../components/Card.svelte';
 import Hero from '../components/Hero.svelte'
 import Cta from '../components/Cta.svelte';
 import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
+import image from "../images/IMG-7107.jpg";
 
 const homeResponse = await fetch('https://admin.blueengineering.dev/api/home-page?populate=*');
 const homePage = await homeResponse.json();
@@ -43,7 +44,7 @@ const stories = await storyResponse.json();
       </div>
 
       <div class="relative max-w-7xl mx-auto">
-        <Hero title="Our stories"></Hero>
+        <Hero image={image} headline="Our stories" body="Coming Soon"></Hero>
         <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {stories.data.map((story, index) => (
             <Card story={story.attributes} key={index}></Card>

@@ -6,7 +6,7 @@
 <div class="relative px-6 lg:px-8">
   <div class="absolute inset-0 from-purple-600 to-blue-600 bg-blend-screen">
     <img
-      class="h-full w-full object-cover"
+      class="h-full w-full object-cover filter"
       src={image}
       alt="People working on laptops"
     />
@@ -19,3 +19,8 @@
     </div>
   </div>
 </div>
+<style>
+  .filter {
+    filter: brightness(75%);
+  }
+</style>
