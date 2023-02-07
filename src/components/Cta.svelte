@@ -3,6 +3,7 @@
     export let image_url = "images/pexels-photo-1.jpg";
     export let header = "Header"
     export let body = "body"
+    export let link = "/"
 </script>
 <div>
     <dt>
@@ -20,5 +21,5 @@
     <dd class="mt-2 text-base text-gray-500">
       <p class="text-sm leading-5 text-gray-900">{body}</p>
     </dd>
-    <SecondaryBtn>Learn More</SecondaryBtn>
+    <SecondaryBtn link={link}>Learn More</SecondaryBtn>
   </div>
