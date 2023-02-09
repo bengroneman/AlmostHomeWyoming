@@ -29,6 +29,7 @@ const image_url = "../images/Almost-Home-1.jpeg";
           <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Our Mission
           </h3>
+          {aboutContent.data.attributes.CTA.Body}
           <div class="mt-5 prose prose-indigo text-gray-900">
             {aboutContent.data.attributes.Quote.map((item) => {
               return (
