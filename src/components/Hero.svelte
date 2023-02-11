@@ -1,15 +1,20 @@
 <script>
     export let headline = "headline";
     export let body = "body";
-    export let image = "../images/pexels-photo-1.jpg";
+    export let image = "";
 </script>
 <div class="relative px-6 lg:px-8">
   <div class="absolute inset-0 from-purple-600 to-blue-600 bg-blend-screen">
-    <img
-      class="h-full w-full object-cover filter"
-      src={image}
-      alt="People working on laptops"
-    />
+    {#if image !== ""}
+      <img
+        class="h-full w-full object-cover filter"
+        src={image}
+        alt="People working on laptops"
+      />
+    {:else}
+    <div class="h-full w-full object-cover filter bg-gradient-to-r from-t-teal to-t-blue">
+    </div>
+    {/if}
   </div>
 
   <div class="relative mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
