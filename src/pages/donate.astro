@@ -8,13 +8,13 @@ const image_url = "../images/Almost-Home-1.jpeg";
 ---
 <Layout>
     <Hero headline={donateContent.data.attributes.Hero.Header} body={donateContent.data.attributes.Hero.SubHeader}></Hero>
-    <div class="bg-white max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg">
+    <div class="bg-white my-8 max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg">
       <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
           Ways to donate
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
-          Check, Paypal, card
+          Check, card, or direct
         </p>
       </div>
       <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
@@ -34,16 +34,12 @@ const image_url = "../images/Almost-Home-1.jpeg";
             </dd>
           </div>
           <div class="sm:col-span-1">
-            <dt class="text-sm font-medium text-gray-500">Paypal</dt>
-            <dd class="mt-1 text-sm text-gray-900"></dd>
-          </div>
-          <div class="sm:col-span-1">
             <dt class="text-sm font-medium text-gray-500">Card</dt>
             <dd class="mt-1 text-sm text-gray-900">
               <a
                 href="https://buy.stripe.com/8wM7sS1EZ08xgdaeUU"
                 target="_blank"
-                class="w-full inline-flex items-center justify-center py-1 px-3 bg-sky-100 border border-transparent rounded-md shadow-md text-base font-medium text-sky-800 hover:bg-gray-50 sm:w-auto"
+                class="w-full inline-flex items-center justify-center py-1 px-3 bg-t-orange border border-transparent rounded-md shadow-md text-base font-medium text-t-blue hover:bg-gray-50 sm:w-auto"
               >
                 Donate
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
