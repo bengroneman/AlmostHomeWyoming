@@ -7,6 +7,9 @@ import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
 import SecondaryBtn from '../components/global/SecondaryBtn.svelte';
 import image from "../images/IMG-7107.jpg";
 import image2 from "../images/pexels-photo-1.jpg";
+import HeartHands from "../images/HearHands.svg";
+import HouseHand from "../images/HouseHand.svg";
+import HeartHouse from "../images/HouseHeart.svg";
 
 const homeResponse = await fetch('https://admin.blueengineering.dev/api/home-page?populate=*');
 const homePage = await homeResponse.json();
@@ -28,11 +31,8 @@ const stories = await storyResponse.json();
           <div class="mt-12 grid grid-cols-3 gap-x-6 gap-y-12 lg:mt-16 lg:gap-x-8 lg:gap-y-16">
             <div class="bg-gradient-to-r from-purple-800 to-t-teal p-6 rounded">
               <div>
-                <span class="flex h-24 w-24 items-center justify-center rounded-md bg-white bg-opacity-10">
-                  <!-- Heroicon name: outline/book -->
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-white">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                  </svg>
+                <span class="flex h-24 w-24 items-center justify-center rounded-md">
+                  <img src={HouseHand} />
                 </span>
               </div>
               <div class="mt-6">
@@ -43,11 +43,9 @@ const stories = await storyResponse.json();
             </div>
             <div class="bg-gradient-to-r from-t-teal to-indigo-400 p-6 rounded">
               <div>
-                <span class="flex h-24 w-24 items-center justify-center rounded-md bg-white bg-opacity-10">
+                <span class="flex h-24 w-24 items-center justify-center rounded-md">
                   <!-- Heroicon name: outline/heart -->
-                  <svg class="h-12 w-12 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                  </svg>
+                  <img src={HeartHands} />
                 </span>
               </div>
               <div class="mt-6">
@@ -58,12 +56,11 @@ const stories = await storyResponse.json();
             </div>
             <div class="bg-gradient-to-l from-purple-800 to-indigo-400 p-6 rounded">
               <div>
-                <span class="flex h-24 w-24 items-center justify-center rounded-md bg-white bg-opacity-10">
+                <span class="flex h-24 w-24 items-center justify-center rounded-md">
                   <!-- Heroicon name: outline/users -->
-                  <svg class="h-12 w-12 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-                  </svg>
+                  <img src={HeartHouse} />
                 </span>
+
               </div>
               <div class="mt-6">
                 <h3 class="text-lg font-medium text-white">{homePage.data.attributes.CTAs[2].Header}</h3>
