@@ -4,7 +4,12 @@ import Card from '../components/Card.svelte';
 import Hero from '../components/Hero.svelte'
 import Cta from '../components/Cta.svelte';
 import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
+import SecondaryBtn from '../components/global/SecondaryBtn.svelte';
 import image from "../images/IMG-7107.jpg";
+import image2 from "../images/pexels-photo-1.jpg";
+import HeartHands from "../images/HearHands.svg";
+import HouseHand from "../images/HouseHand.svg";
+import HeartHouse from "../images/HouseHeart.svg";
 
 const homeResponse = await fetch('https://admin.blueengineering.dev/api/home-page?populate=*');
 const homePage = await homeResponse.json();
@@ -18,28 +23,52 @@ const stories = await storyResponse.json();
       <Hero
         headline={homePage.data.attributes.Hero.Header}
         body={homePage.data.attributes.Hero.SubHeader}
+        image="../images/pexels-photo-1.jpg"
       />
-      <div class="relative my-12 py-12">
-        <div class="relative flex justify-center">
-          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            the Almost Home Organization
-          </h2>
-        </div>
-      </div>
+      <div class="">
+        <div class="mx-auto max-w-4xl py-16 px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
+          <h2 class="text-3xl font-bold tracking-tight text-t-black">Almost Home Wyoming</h2>
+          <div class="mt-12 grid grid-cols-3 gap-x-6 gap-y-12 lg:mt-16 lg:gap-x-8 lg:gap-y-16">
+            <div class="bg-gradient-to-r from-purple-800 to-t-teal p-6 rounded">
+              <div>
+                <span class="flex h-24 w-24 items-center justify-center rounded-md">
+                  <img src={HouseHand} />
+                </span>
+              </div>
+              <div class="mt-6">
+                <h3 class="text-lg font-medium text-white">{homePage.data.attributes.CTAs[0].Header}</h3>
+                <p class="mt-2 text-base text-white">{homePage.data.attributes.CTAs[0].Body}</p>
+                <SecondaryBtn link="/about/">Read On</PrimaryBtn>
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-t-teal to-indigo-400 p-6 rounded">
+              <div>
+                <span class="flex h-24 w-24 items-center justify-center rounded-md">
+                  <!-- Heroicon name: outline/heart -->
+                  <img src={HeartHands} />
+                </span>
+              </div>
+              <div class="mt-6">
+                <h3 class="text-lg font-medium text-white">{homePage.data.attributes.CTAs[1].Header}</h3>
+                <p class="mt-2 text-base text-white">{homePage.data.attributes.CTAs[1].Body}</p>
+                <SecondaryBtn link="/donate/">Donate</SecondaryBtn>
+              </div>
+            </div>
+            <div class="bg-gradient-to-l from-purple-800 to-indigo-400 p-6 rounded">
+              <div>
+                <span class="flex h-24 w-24 items-center justify-center rounded-md">
+                  <!-- Heroicon name: outline/users -->
+                  <img src={HeartHouse} />
+                </span>
 
-      <div class="py-12 my-12 bg-white">
-        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 class="sr-only">About </h2>
-          <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
-            {homePage.data.attributes.CTAs.map((item, index) => (
-              <Cta
-                key={index}
-                header={item.Header}
-                body={item.Body}
-                link={item.link}
-              />
-            ))}
-          </dl>
+              </div>
+              <div class="mt-6">
+                <h3 class="text-lg font-medium text-white">{homePage.data.attributes.CTAs[2].Header}</h3>
+                <p class="mt-2 text-white text-base">{homePage.data.attributes.CTAs[2].Body}</p>
+                <SecondaryBtn link="/contact/">Contact Us</SecondaryBtn>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
