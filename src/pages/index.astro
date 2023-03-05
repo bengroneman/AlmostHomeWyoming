@@ -44,7 +44,7 @@ const stories = await storyResponse.json();
       </div>
 
       <div class="relative max-w-7xl mx-auto">
-        <Hero image={image} headline="Our stories" body="Coming Soon"></Hero>
+        <Hero image={image} headline="Our stories" body="Read about our organization"></Hero>
         <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {stories.data.map((story, index) => (
             <Card story={story.attributes} key={index}></Card>

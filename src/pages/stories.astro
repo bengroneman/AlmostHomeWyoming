@@ -11,7 +11,7 @@ const stories = await storiesResponse.json();
 ---
 <Layout>
   <div class="relative mx-auto">
-    <Hero headline="Our stories" body="Coming Soon"></Hero>
+    <Hero headline="Our stories" body="Read about our organization"></Hero>
     <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
       {stories.data.map((story, index) => (
         <Card story={story.attributes} key={index}></Card>
