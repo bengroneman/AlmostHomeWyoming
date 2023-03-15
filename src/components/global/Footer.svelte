@@ -27,7 +27,7 @@ const navigation = {
       {/each}
     </nav>
     <p class="mt-8 text-center text-base text-gray-400">
-      &copy; 2023 Almost Home Wyoming, Inc. All rights reserved.
+      &copy; 2023 Almost Home Wyoming, Inc. All rights reserved. - built by <a href="https://ben.groneman.org" class="text-base text-gray-500 hover:text-gray-900">Ben Groneman</a>
     </p>
   </div>
 </footer>
