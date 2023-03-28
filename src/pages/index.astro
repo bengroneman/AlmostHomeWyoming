@@ -10,6 +10,7 @@ import image2 from "../images/pexels-photo-1.jpg";
 import HeartHands from "../images/HearHands.svg";
 import HouseHand from "../images/HouseHand.svg";
 import HeartHouse from "../images/HouseHeart.svg";
+import VideoCTA from "../components/VideoCTA.svelte";
 
 const homeResponse = await fetch('https://admin.blueengineering.dev/api/home-page?populate=*');
 const homePage = await homeResponse.json();
@@ -28,7 +29,7 @@ const stories = await storyResponse.json();
       <div class="">
         <div class="mx-auto max-w-4xl py-16 px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
           <h2 class="text-3xl font-bold tracking-tight text-t-black">Almost Home Wyoming</h2>
-          <div class="mt-12 grid grid-cols-3 gap-x-6 gap-y-12 lg:mt-16 lg:gap-x-8 lg:gap-y-16">
+          <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 gap-x-6 gap-y-12 lg:mt-16 lg:gap-x-8 lg:gap-y-16">
             <div class="bg-gradient-to-r from-purple-800 to-t-teal p-6 rounded">
               <div>
                 <span class="flex h-24 w-24 items-center justify-center rounded-md">
@@ -81,6 +82,8 @@ const stories = await storyResponse.json();
         </div>
       </div>
 
+      <VideoCTA />
+
       <div class="bg-sky-100 py-12 my-12">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
@@ -98,6 +101,6 @@ const stories = await storyResponse.json();
           </div>
         </div>
       </div>
-      </div>
-	</main>
+    </div>
+  </main>
 </Layout>

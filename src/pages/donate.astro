@@ -6,7 +6,7 @@ const donateResponse = await fetch('https://admin.blueengineering.dev/api/donate
 const donateContent = await donateResponse.json();
 const image_url = "../images/Almost-Home-1.jpeg";
 ---
-<Layout>
+<Layout title={donateContent.data.attributes.Title}>
     <Hero headline={donateContent.data.attributes.Hero.Header} body={donateContent.data.attributes.Hero.SubHeader}></Hero>
     <div class="bg-white my-8 max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg">
       <div class="px-4 py-5 sm:px-6">
