@@ -4,7 +4,6 @@ const URL = "http://localhost:3000/";
 
 test('Home page Has correct title', async ({ page }) => {
   await page.goto(URL);
-  await page.getByRole('link', { name: 'Home', exact: true }).click();
   await expect(page).toHaveTitle("Almost Home | Wyoming");
 });
 

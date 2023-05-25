@@ -7,6 +7,9 @@ import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
 import SecondaryBtn from '../components/global/SecondaryBtn.svelte';
 import image from "../images/IMG-7107.jpg";
 import image2 from "../images/pexels-photo-1.jpg";
+import almostHomeWyoLogo from "../images/almosthome-wyo-logo.jpeg";
+import challengeForCharitiesLogo from "../images/challenge-for-charities-logo.jpeg";
+import landerCommunityFoundationLogo from "../images/LCF_Logo_Hor_RGB.png";
 import HeartHands from "../images/HearHands.svg";
 import HouseHand from "../images/HouseHand.svg";
 import HeartHouse from "../images/HouseHeart.svg";
@@ -83,24 +86,32 @@ const stories = await storyResponse.json();
       </div>
 
       <VideoCTA />
-
-      <div class="bg-sky-100 py-12 my-12">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
-          <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
-            <span class="block">{homePage.data.attributes.Title}</span>
-            <span class="block text-sky-600">
-              {homePage.data.attributes.Hero.SubHeader}
-            </span>
-          </h2>
-          <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-            <div class="inline-flex rounded-md shadow">
-              <PrimaryBtn link="/donate">
-                Donate
-              </PrimaryBtn>
+      <div class="bg-white py-24 sm:py-32" id="c4c">
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
+              <div class="mx-auto w-full max-w-xl lg:mx-0">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900">Challenge for Charities 2023</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-600">
+                Please consider donating to Almost Home Wyoming during the Lander Community Foundation Challenge For Charities Match Event!
+                </p>
+                <p class="mt-6 text-lg leading-8 text-gray-600">
+                Checks must be made out to the <span class="decoration-purple-600 underline">Lander Community Foundation, Box 1131, Lander, WY, 82520,</span> or you can pay online at info@landercommunityfoundation.org and your donation will be matched.
+                </p>
+                <p class="mt-6 text-lg leading-8 text-gray-600">
+                Please make sure to put <span class="decoration-purple-600 underline">“Almost Home Wyoming” in the memo</span> so we receive your gift!  Thank you, Lander!
+                </p>
+                <div class="mt-8 flex items-center gap-x-6">
+                  <a href="https://www.landercommunityfoundation.org/challenge-for-charities-overview" target="_blank" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Learn More</a>
+                  <a href="https://www.landercommunityfoundation.org/donate" class="text-sm font-semibold text-gray-900">Donate</a>
+                </div>
+              </div>
+              <div class="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
+                <img class="max-h-48 w-full object-contain object-left" src={challengeForCharitiesLogo} alt="Challenge for Charities logo">
+                <img class="max-h-48 w-full object-contain object-left" src={landerCommunityFoundationLogo} alt="Lander Community Foundation logo">
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </main>
 </Layout>
