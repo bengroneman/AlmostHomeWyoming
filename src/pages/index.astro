@@ -42,7 +42,7 @@ const stories = await storyResponse.json();
               <div class="mt-6">
                 <h3 class="text-lg font-medium text-white">{homePage.data.attributes.CTAs[0].Header}</h3>
                 <p class="mt-2 text-base text-white">{homePage.data.attributes.CTAs[0].Body}</p>
-                <SecondaryBtn link="/about/">Read On</PrimaryBtn>
+                <SecondaryBtn link="/about/">Read On</SecondaryBtn>
               </div>
             </div>
             <div class="bg-gradient-to-r from-t-teal to-indigo-400 p-6 rounded">
@@ -78,7 +78,7 @@ const stories = await storyResponse.json();
 
       <div class="relative max-w-7xl mx-auto">
         <Hero image={image} headline="Our stories" body="Read about our organization"></Hero>
-        <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+        <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {stories.data.map((story, index) => (
             <Card story={story.attributes} key={index}></Card>
           ))}

@@ -1,31 +1,38 @@
 <script>
+import SecondaryBtn from "./global/SecondaryBtn.svelte";
 export let story = {}
 </script>
-<li class="link-card">
-	<a href={"/stories/" + story.Slug}>
-		<h2>
-			{story.Title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{story.Description}
-		</p>
-	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 0.15rem;
-		background-color: white;
-		background-image: var(--accent-gradient);
-		background-size: 400%;
-		border-radius: 0.5rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-	}
+  <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
+    {#if story.Image.data !== null}
+      <img
+        src={`https://admin.blueengineering.dev${story.Image.data.attributes.url}`}
+        alt={story.Image.data.attributes.alternativeText}
+        class="absolute inset-0 -z-10 h-full w-full object-cover"
+      >
+    {:else}
+      <div class="h-full bg-gradient-to-r from-purple-800 to-t-teal p-6 rounded">
+      </div>
+    {/if}
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+    <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
 
+    <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+<!--      <time datetime="2020-03-16" class="mr-8">Mar 16, 2020</time>-->
+      <div class="-ml-4 flex items-center gap-x-4">
+        <svg viewBox="0 0 2 2" class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
+          <circle cx="1" cy="1" r="1" />
+        </svg>
+      </div>
+    </div>
+    <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
+      <a href={story.Slug}>
+        <span class="absolute inset-0"></span>
+        {story.Title}
+      </a>
+    </h3>
+      <h4 class="mt-5 line-clamp-3 text-sm leading-6 text-gray-300">{story.Description}</h4>
+  </article>
+<style>
 	.link-card > a {
 		width: 100%;
 		text-decoration: none;
