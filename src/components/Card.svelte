@@ -25,7 +25,7 @@ export let story = {}
       </div>
     </div>
     <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
-      <a href={story.Slug}>
+      <a href={"/stories/" + story.Slug}>
         <span class="absolute inset-0"></span>
         {story.Title}
       </a>

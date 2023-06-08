@@ -8,19 +8,19 @@ export async function getStaticPaths() {
   const stories = await storiesResponse.json();
 
   return stories.data.map(({attributes}) => {
-  const { Slug, Title, Body } = attributes;
+  const { Slug, Title, Body, Image } = attributes;
     return {
       params: { Slug },
-      props: { Slug, Title, Body },
+      props: { Slug, Title, Body, Image },
     };
   });
 }
 import Layout from '../../layouts/Layout.astro'
 
-const { Slug, Title, Body } = Astro.props;
+const { Slug, Title, Body, Image } = Astro.props;
 ---
 <Layout title={Title}>
-<Hero headline={Title} body=""></Hero>
+<Hero headline={Title} body="" image={`https://admin.blueengineering.dev${Image.data.attributes.url}`}></Hero>
 <div class="relative overflow-hidden bg-white py-16">
   <div class="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]">
     <div class="relative mx-auto h-full max-w-prose text-lg" aria-hidden="true">
