@@ -7,7 +7,7 @@ const contactResponse = await fetch('https://admin.blueengineering.dev/api/conta
 const contactContent = await contactResponse.json();
 const image_url = "../images/Almost-Home-1.jpeg";
 ---
-<Layout title={contactContent.data.attributes.Title}>
+<Layout title="Contact Almost Home Wyoming">
     <Hero image={image} headline={contactContent.data.attributes.Hero.Header} body={contactContent.data.attributes.Hero.SubHeader}></Hero>
     <div class="bg-white max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg mt-8">
       <div class="px-4 py-5 sm:px-6">
