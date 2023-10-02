@@ -1,0 +1,13 @@
+fragment PostParts on Post {
+  title
+  subTitle
+  description
+  body
+  imgSrc
+}
+
+fragment PageParts on Page {
+  title
+  body
+  subTitle
+}

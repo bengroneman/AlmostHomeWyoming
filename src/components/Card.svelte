@@ -3,10 +3,10 @@ import SecondaryBtn from "./global/SecondaryBtn.svelte";
 export let story = {}
 </script>
   <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
-    {#if story.Image.data !== null}
+    {#if story.node.imgSrc}
       <img
-        src={`https://admin.blueengineering.dev${story.Image.data.attributes.url}`}
-        alt={story.Image.data.attributes.alternativeText}
+        src={story.node.imgSrc}
+        alt={"Almost Home Image"}
         class="absolute inset-0 -z-10 h-full w-full object-cover"
       >
     {:else}
@@ -25,10 +25,10 @@ export let story = {}
       </div>
     </div>
     <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
-      <a href={"/stories/" + story.Slug}>
+      <a href={"/stories/" + story.node.id.split('/').pop()}>
         <span class="absolute inset-0"></span>
-        {story.Title}
+        {story.node.title}
       </a>
     </h3>
-      <h4 class="mt-5 line-clamp-3 text-sm leading-6 text-gray-300">{story.Description}</h4>
+      <h4 class="mt-5 line-clamp-3 text-sm leading-6 text-gray-300">{story.node.subTitle}</h4>
   </article>

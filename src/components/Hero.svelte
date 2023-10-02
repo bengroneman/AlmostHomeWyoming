@@ -9,7 +9,7 @@
       <img
         class="h-full w-full object-cover filter"
         src={image}
-        alt="People working on laptops"
+        alt="Almost Home Wyoming"
       />
     {:else}
     <div class="h-full w-full object-cover filter bg-gradient-to-r from-t-teal to-t-blue">

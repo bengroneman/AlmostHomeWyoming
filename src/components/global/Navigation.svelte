@@ -4,6 +4,10 @@
   import Hamburger from './Hamburger.svelte';
   let navItems = [
     {
+      name: "Home",
+      link: "/"
+    },
+    {
       name: "About",
       link: "/about",
     },

@@ -5,16 +5,20 @@ import Hero from '../components/Hero.svelte'
 import Cta from '../components/Cta.svelte';
 import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
 import image from "../images/Almost-Home-1.jpeg";
+import { client } from '../../tina/__generated__/client';
 
-const storiesResponse = await fetch('https://admin.blueengineering.dev/api/stories?populate=*');
-const stories = await storiesResponse.json();
+const postsResponse = await client.queries.postConnection()
+const stories = postsResponse.data.postConnection.edges.map(post => {
+  return post
+});
+
 ---
 <Layout>
   <div class="relative mx-auto">
     <Hero headline="Our stories" body="Read about our organization"></Hero>
     <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-      {stories.data.map((story, index) => (
-        <Card story={story.attributes} key={index}></Card>
+      {stories.map((story, index) => (
+        <Card story={story} key={index}></Card>
       ))}
     </div>
   </div>

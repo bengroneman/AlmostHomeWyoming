@@ -5,21 +5,25 @@ import Hero from '../components/Hero.svelte'
 import Cta from '../components/Cta.svelte';
 import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
 import SecondaryBtn from '../components/global/SecondaryBtn.svelte';
-import image from "../images/IMG-7107.jpg";
+import image from "../../public/images/IMG-7107.jpg";
 import image2 from "../images/pexels-photo-1.jpg";
-import almostHomeWyoLogo from "../images/almosthome-wyo-logo.jpeg";
-import challengeForCharitiesLogo from "../images/challenge-for-charities-logo.jpeg";
-import landerCommunityFoundationLogo from "../images/LCF_Logo_Hor_RGB.png";
+import almostHomeWyoLogo from "../../public/images/almosthome-wyo-logo.jpeg";
+import challengeForCharitiesLogo from "../../public/images/challenge-for-charities-logo.jpeg";
+import landerCommunityFoundationLogo from "../../public/images/LCF_Logo_Hor_RGB.png";
 import HeartHands from "../images/HearHands.svg";
 import HouseHand from "../images/HouseHand.svg";
 import HeartHouse from "../images/HouseHeart.svg";
 import VideoCTA from "../components/VideoCTA.svelte";
+import { client } from '../../tina/__generated__/client';
+
 
 const homeResponse = await fetch('https://admin.blueengineering.dev/api/home-page?populate=*');
 const homePage = await homeResponse.json();
 
-const storyResponse = await fetch('https://admin.blueengineering.dev/api/stories?populate=*');
-const stories = await storyResponse.json();
+const postsResponse = await client.queries.postConnection()
+const stories = postsResponse.data.postConnection.edges.map(post => {
+  return post
+});
 ---
 <Layout title={homePage.data.attributes.Title}>
 	<main>
@@ -79,8 +83,8 @@ const stories = await storyResponse.json();
       <div class="relative max-w-7xl mx-auto">
         <Hero image={image} headline="Our stories" body="Read about our organization"></Hero>
         <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {stories.data.map((story, index) => (
-            <Card story={story.attributes} key={index}></Card>
+          {stories.map((story, index) => (
+            <Card story={story} key={index}></Card>
           ))}
         </div>
       </div>

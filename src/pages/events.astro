@@ -1,0 +1,37 @@
+---
+import Hero from '../components/Hero.svelte';
+import Layout from '../layouts/Layout.astro';
+import Quote from '../components/Quote.svelte';
+
+// const aboutResponse = await fetch('https://admin.blueengineering.dev/api/about-page?populate=*');
+// const aboutContent = await aboutResponse.json();
+const image_url = "../images/IMG-6677.jpg";
+---
+
+<Layout title="Almost Home Wyoming - Events">
+	<main>
+      <Hero
+        headline="Upcoming events"
+        body="2023 events list"
+      />
+    <div class="relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2">
+        <div class="lg:inset-y-0 lg:left-0">
+        <img
+          class="relative aspect-square"
+          src={image_url}
+          alt="almost home yard sale event with family"
+        />
+      </div>
+      <div class="lg:col-start-2 lg:pl-8">
+        <div class="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0">
+          <h2 class="leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
+              Events
+          </h2>
+          - Nothing up coming this year - check back later
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+

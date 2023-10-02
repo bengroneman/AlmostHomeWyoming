@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.svelte';
-import image from '../images/IMG-6677-edit.jpg';
+import image from '../../public/images/IMG-6677-edit.jpg';
 
 const contactResponse = await fetch('https://admin.blueengineering.dev/api/contact-page?populate=*');
 const contactContent = await contactResponse.json();

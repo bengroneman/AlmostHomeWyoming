@@ -1,14 +1,22 @@
 ---
 import Hero from "../../components/Hero.svelte";
-import SvelteMarkdown from 'svelte-markdown';
+// import SvelteMarkdown from 'svelte-markdown';
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { client } from '../../../tina/__generated__/client';
 
 
 export async function getStaticPaths() {
-  const storiesResponse = await fetch('https://admin.blueengineering.dev/api/stories?populate=*');
-  const stories = await storiesResponse.json();
+  const postsResponse = await client.queries.postConnection()
+  const stories = postsResponse.data.postConnection.edges.map(post => {
+    return post
+  });
 
-  return stories.data.map(({attributes}) => {
-  const { Slug, Title, Body, Image } = attributes;
+  return stories.map(story => {
+    const Slug = story.node.id.split('/').pop();
+    const Title = story.node.title;
+    const Body = story.node.body; // TODO: Break this down into Markdown
+    const Image = story.node.imgSrc; // TODO: Break this down into Markdown
+    console.log(Body)
     return {
       params: { Slug },
       props: { Slug, Title, Body, Image },
@@ -20,7 +28,7 @@ import Layout from '../../layouts/Layout.astro'
 const { Slug, Title, Body, Image } = Astro.props;
 ---
 <Layout title={Title}>
-<Hero headline={Title} body="" image={`https://admin.blueengineering.dev${Image.data.attributes.url}`}></Hero>
+<Hero headline={Title} body="" image={Image}></Hero>
 <div class="relative overflow-hidden bg-white py-16">
   <div class="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]">
     <div class="relative mx-auto h-full max-w-prose text-lg" aria-hidden="true">
@@ -44,7 +52,7 @@ const { Slug, Title, Body, Image } = Astro.props;
   </div>
   <div class="relative px-6 lg:px-8">
     <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
-        <SvelteMarkdown source={Body} />
+        <TinaMarkdown content={Body} />
     </div>
   </div>
 </div>
