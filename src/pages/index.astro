@@ -2,12 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.svelte';
 import Hero from '../components/Hero.svelte'
-import Cta from '../components/Cta.svelte';
-import PrimaryBtn from '../components/global/PrimaryBtn.svelte';
 import SecondaryBtn from '../components/global/SecondaryBtn.svelte';
 import image from "../../public/images/IMG-7107.jpg";
-import image2 from "../images/pexels-photo-1.jpg";
-import almostHomeWyoLogo from "../../public/images/almosthome-wyo-logo.jpeg";
 import challengeForCharitiesLogo from "../../public/images/challenge-for-charities-logo.jpeg";
 import landerCommunityFoundationLogo from "../../public/images/LCF_Logo_Hor_RGB.png";
 import HeartHands from "../images/HearHands.svg";
@@ -16,21 +12,19 @@ import HeartHouse from "../images/HouseHeart.svg";
 import VideoCTA from "../components/VideoCTA.svelte";
 import { client } from '../../tina/__generated__/client';
 
-
-const homeResponse = await fetch('https://admin.blueengineering.dev/api/home-page?populate=*');
-const homePage = await homeResponse.json();
+const homeContent = await client.queries.page({relativePath: 'Home.md'});
 
 const postsResponse = await client.queries.postConnection()
 const stories = postsResponse.data.postConnection.edges.map(post => {
   return post
 });
 ---
-<Layout title={homePage.data.attributes.Title}>
+<Layout title={homeContent.data.page.title}>
 	<main>
 	<div class="wrapper">
       <Hero
-        headline={homePage.data.attributes.Hero.Header}
-        body={homePage.data.attributes.Hero.SubHeader}
+        headline={homeContent.data.page.title}
+        body={homeContent.data.page.subTitle}
         image="../images/pexels-photo-1.jpg"
       />
       <div class="">
@@ -44,8 +38,8 @@ const stories = postsResponse.data.postConnection.edges.map(post => {
                 </span>
               </div>
               <div class="mt-6">
-                <h3 class="text-lg font-medium text-white">{homePage.data.attributes.CTAs[0].Header}</h3>
-                <p class="mt-2 text-base text-white">{homePage.data.attributes.CTAs[0].Body}</p>
+                <h2 class="text-3xl font-medium text-white">About us</h2>
+                <p class="mt-2 text-base text-white">Learn more about our mission and story</p>
                 <SecondaryBtn link="/about/">Read On</SecondaryBtn>
               </div>
             </div>
@@ -57,8 +51,8 @@ const stories = postsResponse.data.postConnection.edges.map(post => {
                 </span>
               </div>
               <div class="mt-6">
-                <h3 class="text-lg font-medium text-white">{homePage.data.attributes.CTAs[1].Header}</h3>
-                <p class="mt-2 text-base text-white">{homePage.data.attributes.CTAs[1].Body}</p>
+                <h2 class="text-2xl font-medium text-white">Ways to Give</h2>
+                <p class="mt-2 text-base text-white">Lend a helping hand</p>
                 <SecondaryBtn link="/donate/">Donate</SecondaryBtn>
               </div>
             </div>
@@ -71,8 +65,8 @@ const stories = postsResponse.data.postConnection.edges.map(post => {
 
               </div>
               <div class="mt-6">
-                <h3 class="text-lg font-medium text-white">{homePage.data.attributes.CTAs[2].Header}</h3>
-                <p class="mt-2 text-white text-base">{homePage.data.attributes.CTAs[2].Body}</p>
+                <h2 class="text-2xl font-medium text-white">Reach out to us</h2>
+                <p class="mt-2 text-white text-base">Please reach out with any questions or concerns, we are here to help</p>
                 <SecondaryBtn link="/contact/">Contact Us</SecondaryBtn>
               </div>
             </div>

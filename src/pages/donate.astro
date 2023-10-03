@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.svelte';
+import { client } from '../../tina/__generated__/client';
 
-const donateResponse = await fetch('https://admin.blueengineering.dev/api/donate-page?populate=*');
-const donateContent = await donateResponse.json();
+const donateContent = await client.queries.page({relativePath: 'Donate.md'});
+
 const image_url = "../images/Almost-Home-1.jpeg";
 ---
 <Layout title="Donate to Almost Home Wyoming">
-    <Hero headline={donateContent.data.attributes.Hero.Header} body={donateContent.data.attributes.Hero.SubHeader}></Hero>
+    <Hero headline={donateContent.data.page.title} body={donateContent.data.page.subTitle}></Hero>
     <div class="bg-white my-8 max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg">
       <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900">

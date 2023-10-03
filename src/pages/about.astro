@@ -2,49 +2,61 @@
 import Hero from '../components/Hero.svelte';
 import Layout from '../layouts/Layout.astro';
 import Quote from '../components/Quote.svelte';
+import { client } from '../../tina/__generated__/client';
+import {TinaMarkdown} from "tinacms/dist/rich-text";
 
-const aboutResponse = await fetch('https://admin.blueengineering.dev/api/about-page?populate=*');
-const aboutContent = await aboutResponse.json();
+const aboutContent = await client.queries.page({relativePath: 'About.md'});
 const image_url = "../images/Almost-Home-1.jpeg";
+const quotes = [
+    {
+        quote: "Overcoming poverty is not a task of charity, it is an act of justice",
+        author: "Nelson Mandela",
+    },
+    {
+        quote: "Rock bottom became the solid foundation on which I rebuilt my life.",
+        author: "J.K Rowling",
+    },
+    {
+        quote: "I always wondered why somebody didn’t do something about that. Then I realized, I am somebody.",
+        author: "Unknown",
+    }
+];
 ---
 
-<Layout title="About our Organiztion">
+<Layout title={aboutContent.data.page.title}>
 	<main>
       <Hero
-        headline={aboutContent.data.attributes.Hero.Header}
-        body={aboutContent.data.attributes.Hero.SubHeader}
+        headline={aboutContent.data.page.title}
+        body={aboutContent.data.page.subTitle}
       />
     <div class="relative pt-12 pb-16 px-4 sm:pt-16 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2">
-        <div class="lg:inset-y-0 lg:left-0">
+      <div class="lg:inset-y-0 lg:left-0">
         <img
           class="relative aspect-square"
-          src={image_url}
+          src={aboutContent.data.page.imgSrc}
           alt="almost home yard sale event with family"
         />
       </div>
       <div class="lg:col-start-2 lg:pl-8">
         <div class="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0">
           <h2 class="leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
-            People helping people
+              {aboutContent.data.page.subTitle}
           </h2>
           <h3 class="my-4 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Our Mission
           </h3>
-          {aboutContent.data.attributes.CTA.Body}
+          <TinaMarkdown content={aboutContent.data.page.body} />
         </div>
       </div>
 
     </div>
     <div class="grid-cols-1 grid max-w-4xl mx-auto">
-    {aboutContent.data.attributes.Quote.map((item) => {
+    {quotes.map((item) => {
       return (
-        <Quote author={item.Author} quote={item.Body} />
+        <Quote author={item.author} quote={item.quote} />
       );
     })}
     </div>
-
-  </div>
-
   </main>
 </Layout>
 

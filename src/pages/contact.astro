@@ -2,17 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.svelte';
 import image from '../../public/images/IMG-6677-edit.jpg';
+import { client } from '../../tina/__generated__/client';
 
-const contactResponse = await fetch('https://admin.blueengineering.dev/api/contact-page?populate=*');
-const contactContent = await contactResponse.json();
+const contactContent = await client.queries.page({relativePath: 'Contact.md'});
+
 const image_url = "../images/Almost-Home-1.jpeg";
 ---
 <Layout title="Contact Almost Home Wyoming">
-    <Hero image={image} headline={contactContent.data.attributes.Hero.Header} body={contactContent.data.attributes.Hero.SubHeader}></Hero>
+    <Hero image={contactContent.data.page.imgSrc} headline={contactContent.data.page.title} body={contactContent.data.page.subTitle}></Hero>
     <div class="bg-white max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg mt-8">
       <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
-            {contactContent.data.attributes.Hero.Header}
+            {contactContent.data.page.title}
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
           Phone, Email, etc..
@@ -23,7 +24,7 @@ const image_url = "../images/Almost-Home-1.jpeg";
           <div class="sm:col-span-1">
             <dt class="text-sm font-medium text-gray-500">Mailing Address</dt>
             <dd class="mt-1 text-sm text-gray-900">
-              {contactContent.data.attributes.Address}
+              P.O. Box 44, Lander, WY,82520
             </dd>
           </div>
           <div class="sm:col-span-1">
@@ -31,12 +32,14 @@ const image_url = "../images/Almost-Home-1.jpeg";
               Phone Number
             </dt>
             <dd class="mt-1 text-sm text-gray-900">
-            {contactContent.data.attributes.PhoneNumber}
+            (307) 332-6127
             </dd>
           </div>
           <div class="sm:col-span-1">
             <dt class="text-sm font-medium text-gray-500">Email</dt>
-            <dd class="mt-1 text-sm text-gray-900">{contactContent.data.attributes.Email}</dd>
+            <dd class="mt-1 text-sm text-gray-900">
+              almosthomewyoming@gmail.com
+            </dd>
           </div>
         </dl>
       </div>
