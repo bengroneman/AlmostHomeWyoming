@@ -91,6 +91,63 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "event",
+        label: "Events",
+        path: "content/events",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Body",
+            isBody: true,
+            required: false,
+          },
+          {
+            type: 'image',
+            label: 'Hero image',
+            name: 'imgSrc',
+            required: false,
+          },
+          {
+            type: 'datetime',
+            label: 'Start Date',
+            name: 'startDate',
+            required: true,
+          },
+          {
+            type: 'string',
+            label: 'Start Time',
+            name: 'startTime',
+            required: true,
+          },
+          {
+            type: 'datetime',
+            label: 'End Date',
+            name: 'endDate',
+            required: true,
+          },
+          {
+            type: 'string',
+            label: 'End Time',
+            name: 'endTime',
+            required: true,
+          },
+          {
+            type: 'string',
+            label: 'Location',
+            name: 'location',
+            required: true,
+          },
+        ],
+      },
     ],
   },
 });

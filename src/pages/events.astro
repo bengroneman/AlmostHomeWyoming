@@ -2,9 +2,14 @@
 import Hero from '../components/Hero.svelte';
 import Layout from '../layouts/Layout.astro';
 import Quote from '../components/Quote.svelte';
+import { client } from '../../tina/__generated__/client';
 
-// const aboutResponse = await fetch('https://admin.blueengineering.dev/api/about-page?populate=*');
-// const aboutContent = await aboutResponse.json();
+const eventsResponse = await client.queries.eventsConnection()
+const events = eventsResponse.data.postConnection.edges.map(event => {
+  return event
+});
+console.log(events)
+
 const image_url = "../images/IMG-6677.jpg";
 ---
 

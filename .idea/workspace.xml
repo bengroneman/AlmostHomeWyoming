@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9476ba6e-0950-4daa-9e4c-54a395c76e0e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/events.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tina/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tina/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tina/tina-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/tina/tina-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +26,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="2LbMIannIrKEcKKXk9Wv3iAfJg3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -37,13 +51,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/bengr/code/almosthomewyoming/src/images",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/ben.groneman/code/almosthomewyoming",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/Users/ben.groneman/Library/Application Support/JetBrains/Toolbox/apps/PyCharm-P/ch-0/232.8660.197/PyCharm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -62,6 +78,7 @@
       <updated>1676135249821</updated>
       <workItem from="1676135254018" duration="5749000" />
       <workItem from="1676245744589" duration="4806000" />
+      <workItem from="1696379082984" duration="720000" />
     </task>
     <servers />
   </component>
