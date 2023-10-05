@@ -1,10 +1,10 @@
 ---
-title: Test event
+title: Quilt Raffle
 imgSrc: ''
-startDate: 2023-10-18T06:00:00.000Z
-endDate: 2023-10-12T06:00:00.000Z
-location: Lander Bar and Grill
-startTime: '12:00PM '
-endTime: '1:00PM'
+startDate: 2023-10-08T06:00:00.000Z
+startTime: '8:00 am'
+endDate: 2023-10-14T06:00:00.000Z
+endTime: '10:00 pm'
+location: Facebook
 ---
 
