@@ -1,6 +1,6 @@
 ---
 title: Test event
-imgSrc: /pexels-photo-1.jpg
+imgSrc: ''
 startDate: 2023-10-18T06:00:00.000Z
 endDate: 2023-10-12T06:00:00.000Z
 location: Lander Bar and Grill

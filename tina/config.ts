@@ -104,13 +104,6 @@ export default defineConfig({
             required: true,
           },
           {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-            required: false,
-          },
-          {
             type: 'image',
             label: 'Hero image',
             name: 'imgSrc',

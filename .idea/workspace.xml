@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9476ba6e-0950-4daa-9e4c-54a395c76e0e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/EventCard.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/almosthomewyoming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/almosthomewyoming.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/events/Test-event.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/events/Test-event.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/events.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/stories/[Slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/stories/[Slug].astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tina/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tina/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tina/tina-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/tina/tina-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui-automation/utils/zdutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ui-automation/utils/zdutils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +42,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2LbMIannIrKEcKKXk9Wv3iAfJg3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -65,8 +71,42 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="C:\Users\bengr\code\almosthomewyoming\src\images" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../ui-automation/utils" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="test_zd_tickets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ui-automation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Pipenv (ui-automation)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ui-automation/tests/zd" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ui-automation/tests/zd/test_zd_tickets.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test_zd_tickets" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -78,7 +118,9 @@
       <updated>1676135249821</updated>
       <workItem from="1676135254018" duration="5749000" />
       <workItem from="1676245744589" duration="4806000" />
-      <workItem from="1696379082984" duration="720000" />
+      <workItem from="1696379082984" duration="3321000" />
+      <workItem from="1696462564113" duration="590000" />
+      <workItem from="1696463868455" duration="967000" />
     </task>
     <servers />
   </component>
@@ -95,5 +137,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/almosthomewyoming$test_zd_tickets.coverage" NAME="test_zd_tickets Coverage Results" MODIFIED="1696462787652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../ui-automation/tests/zd" />
   </component>
 </project>
