@@ -3,6 +3,85 @@ import { defineConfig } from "tinacms";
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
+import type { TinaTemplate } from 'tinacms'
+
+const heroBlock: TinaTemplate = {
+  name: 'hero',
+  label: 'Hero',
+  ui: {
+    defaultItem: {
+      tagline: "Here's some text above the other text",
+      headline: 'This Big Text is Totally Awesome',
+      text: 'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
+    },
+  },
+  fields: [
+    {
+      type: 'string',
+      label: 'Tagline',
+      name: 'tagline',
+    },
+    {
+      type: 'string',
+      label: 'Headline',
+      name: 'headline',
+    },
+    {
+      type: 'string',
+      label: 'Text',
+      name: 'text',
+      ui: {
+        component: 'textarea',
+      },
+    },
+  ],
+}
+
+const featureBlock: TinaTemplate = {
+  name: 'features',
+  label: 'Features',
+  fields: [
+    {
+      type: 'object',
+      label: 'Feature Items',
+      name: 'items',
+      list: true,
+      fields: [
+        {
+          type: 'string',
+          label: 'Title',
+          name: 'title',
+        },
+        {
+          type: 'string',
+          label: 'Text',
+          name: 'text',
+        },
+      ],
+    },
+  ],
+}
+
+const contentBlock: TinaTemplate = {
+  name: 'content',
+  label: 'Content',
+  ui: {
+    defaultItem: {
+      body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.',
+    },
+  },
+  fields: [
+    {
+      type: 'string',
+      ui: {
+        component: 'textarea',
+      },
+      label: 'Body',
+      name: 'body',
+    },
+  ],
+}
+
 export default defineConfig({
   branch,
   clientId: process.env.CLIENT_ID, // Get this from tina.io
@@ -65,16 +144,15 @@ export default defineConfig({
         fields: [
           {
             type: "string",
-            name: "title",
-            label: "Title",
+            name: "pageName",
+            label: "Page name",
             isTitle: true,
             required: true,
           },
           {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
+            type: "string",
+            name: "title",
+            label: "Title",
             required: false,
           },
           {
@@ -89,6 +167,13 @@ export default defineConfig({
             name: 'imgSrc',
             required: false,
           },
+          {
+            type: "rich-text",
+            name: "cta",
+            label: "Call to Action",
+            isBody: true,
+            required: false,
+          },
         ],
       },
       {
@@ -99,7 +184,7 @@ export default defineConfig({
           {
             type: "string",
             name: "title",
-            label: "Title",
+            label: "Page Name",
             isTitle: true,
             required: true,
           },

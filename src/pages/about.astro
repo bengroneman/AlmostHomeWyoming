@@ -6,6 +6,7 @@ import { client } from '../../tina/__generated__/client';
 import {TinaMarkdown} from "tinacms/dist/rich-text";
 
 const aboutContent = await client.queries.page({relativePath: 'About.md'});
+console.log(aboutContent.data.page.cta)
 const image_url = "../images/Almost-Home-1.jpeg";
 const quotes = [
     {
@@ -45,7 +46,7 @@ const quotes = [
           <h3 class="my-4 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Our Mission
           </h3>
-          <TinaMarkdown content={aboutContent.data.page.body} />
+          <TinaMarkdown content={aboutContent.data.page.cta} client:only="react" class="paragraph"/>
         </div>
       </div>
 

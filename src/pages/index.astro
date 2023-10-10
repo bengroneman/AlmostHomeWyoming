@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../assets/global.css';
 import Card from '../components/Card.svelte';
 import Hero from '../components/Hero.svelte'
 import SecondaryBtn from '../components/global/SecondaryBtn.svelte';
@@ -11,6 +12,8 @@ import HouseHand from "../images/HouseHand.svg";
 import HeartHouse from "../images/HouseHeart.svg";
 import VideoCTA from "../components/VideoCTA.svelte";
 import { client } from '../../tina/__generated__/client';
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+
 
 const homeContent = await client.queries.page({relativePath: 'Home.md'});
 
@@ -29,7 +32,6 @@ const stories = postsResponse.data.postConnection.edges.map(post => {
       />
       <div class="">
         <div class="mx-auto max-w-4xl py-16 px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
-          <h2 class="text-3xl font-bold tracking-tight text-t-black">Almost Home Wyoming</h2>
           <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1 gap-x-6 gap-y-12 lg:mt-16 lg:gap-x-8 lg:gap-y-16">
             <div class="bg-gradient-to-r from-purple-800 to-t-teal p-6 rounded">
               <div>
@@ -87,17 +89,8 @@ const stories = postsResponse.data.postConnection.edges.map(post => {
       <div class="bg-white py-24 sm:py-32" id="c4c">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
-              <div class="mx-auto w-full max-w-xl lg:mx-0">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900">Challenge for Charities 2023</h2>
-                <p class="mt-6 text-lg leading-8 text-gray-600">
-                Please consider donating to Almost Home Wyoming during the Lander Community Foundation Challenge For Charities Match Event!
-                </p>
-                <p class="mt-6 text-lg leading-8 text-gray-600">
-                Checks must be made out to the <span class="decoration-purple-600 underline">Lander Community Foundation, Box 1131, Lander, WY, 82520,</span> or you can pay online at info@landercommunityfoundation.org and your donation will be matched.
-                </p>
-                <p class="mt-6 text-lg leading-8 text-gray-600">
-                Please make sure to put <span class="decoration-purple-600 underline">“Almost Home Wyoming” in the memo</span> so we receive your gift!  Thank you, Lander!
-                </p>
+              <div class="paragraph mx-auto w-full max-w-xl lg:mx-0">
+                <TinaMarkdown content={homeContent.data.page.cta} class="paragraph"/>
                 <div class="mt-8 flex items-center gap-x-6">
                   <a href="https://www.landercommunityfoundation.org/challenge-for-charities-overview" target="_blank" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Learn More</a>
                   <a href="https://www.landercommunityfoundation.org/donate" class="text-sm font-semibold text-gray-900">Donate</a>
