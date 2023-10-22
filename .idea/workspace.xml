@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9476ba6e-0950-4daa-9e4c-54a395c76e0e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/events/Test-event.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/events/Test-event.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventCard.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/events.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tina/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tina/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tina/tina-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/tina/tina-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventCard.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventCard.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Layout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Layout.astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ui-automation/tests/sf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ui-automation/tests/sf/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ui-automation/tests/sf/test_sf_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ui-automation/tests/sf/test_sf_cases.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ui-automation/tests/zd/test_zd_tickets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ui-automation/tests/zd/test_zd_tickets.py" afterDir="false" />
@@ -153,7 +150,7 @@
       <workItem from="1696945374675" duration="44000" />
       <workItem from="1696945443727" duration="1902000" />
       <workItem from="1697589304364" duration="1252000" />
-      <workItem from="1697901168397" duration="3926000" />
+      <workItem from="1697901168397" duration="5627000" />
     </task>
     <servers />
   </component>
