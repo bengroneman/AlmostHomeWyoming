@@ -2,12 +2,12 @@
 import Hero from '../components/Hero.svelte';
 import Layout from '../layouts/Layout.astro';
 import Quote from '../components/Quote.svelte';
-import EventCard from '../components/EventCard.svelte';
+import EventCard from '../components/EventCard.astro';
 import { client } from '../../tina/__generated__/client';
 
 const eventsResponse = await client.queries.eventConnection()
 const events = eventsResponse.data.eventConnection.edges.map(event => {
-  return event
+  return event.node
 });
 console.log(events)
 ---

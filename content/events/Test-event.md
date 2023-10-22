@@ -7,4 +7,5 @@ endDate: 2023-10-14T06:00:00.000Z
 endTime: '10:00 pm'
 location: Facebook
 ---
+Quilt raffle to help support the Almost Home Wyoming goals.
 
