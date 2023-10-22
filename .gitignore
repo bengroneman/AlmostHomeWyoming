@@ -28,3 +28,5 @@ pnpm-debug.log*
 node_modules
 
 __generated__
+.idea/workspace.xml
+.idea/**

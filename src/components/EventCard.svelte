@@ -6,36 +6,47 @@ const formatDate = (datetime) => {
   return new Date(datetime).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
 }
 </script>
-<ol class="mt-4 divide-y divide-gray-100 text-sm leading-6 w-full">
-  <li class="relative flex space-x-6 py-6 xl:static">
-    {#if event.node.imgSrc}
-      <img src={event.node.imgSrc} alt="Almost Home event" class="h-24 w-24 flex-none rounded-full">
-    {:else}
-      <img src="images/almosthome-wyo-logo.jpeg" alt="Almost Home event" class="h-24 w-24 flex-none rounded-full">
-    {/if}
-    <div class="flex-auto">
-      <h3 class="pr-10 font-semibold text-gray-900 xl:pr-0">{event.node.title}</h3>
-      <dl class="mt-2 flex flex-col text-gray-500 xl:flex-row">
-        <div class="flex items-start space-x-3">
-          <dt class="mt-0.5">
-            <span class="sr-only">Date</span>
-            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd" />
-            </svg>
-          </dt>
-          <dd><time datetime="{event.node.startDate}">{formatDate(event.node.startDate)} at {event.node.startTime}</time></dd><p>-></p>
-          <dd><time datetime="{event.node.endDate}">{formatDate(event.node.endDate)} at {event.node.endTime}</time></dd>
+<div class="bg-white">
+  <div class="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20">
+    <div class="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40">
+      <div class="px-6 lg:px-0 lg:pt-4">
+        <div class="mx-auto max-w-2xl">
+          <div class="max-w-lg">
+            <img class="h-24" src="/images/almosthome-wyo-logo.jpeg" alt="Almost Home Wyoming">
+            <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">{event.}</h1>
+            <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+            <div class="mt-10 flex items-center gap-x-6">
+              <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Documentation</a>
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">View on GitHub <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
         </div>
-        <div class="mt-2 flex items-start space-x-3 xl:ml-3.5 xl:mt-0 xl:border-l xl:border-gray-400 xl:border-opacity-50 xl:pl-3.5">
-          <dt class="mt-0.5">
-            <span class="sr-only">Location</span>
-            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clip-rule="evenodd" />
-            </svg>
-          </dt>
-          <dd>{event.node.location}</dd>
+      </div>
+      <div class="mt-20 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen">
+        <div class="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 md:-mr-20 lg:-mr-36" aria-hidden="true"></div>
+        <div class="shadow-lg md:rounded-3xl">
+          <div class="bg-indigo-500 [clip-path:inset(0)] md:[clip-path:inset(0_round_theme(borderRadius.3xl))]">
+            <div class="absolute -inset-y-px left-1/2 -z-10 ml-10 w-[200%] skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white md:ml-20 lg:ml-36" aria-hidden="true"></div>
+            <div class="relative px-6 pt-8 sm:pt-16 md:pl-16 md:pr-0">
+              <div class="mx-auto max-w-2xl md:mx-0 md:max-w-none">
+                <div class="w-screen overflow-hidden rounded-tl-xl bg-gray-900">
+                  <div class="flex bg-gray-800/40 ring-1 ring-white/5">
+                    <div class="-mb-px flex text-sm font-medium leading-6 text-gray-400">
+                      <div class="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">NotificationSetting.jsx</div>
+                      <div class="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
+                    </div>
+                  </div>
+                  <div class="px-6 pb-14 pt-6">
+                    <!-- Your code example -->
+                  </div>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 md:rounded-3xl" aria-hidden="true"></div>
+            </div>
+          </div>
         </div>
-      </dl>
+      </div>
     </div>
-  </li>
-</ol>
+    <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32"></div>
+  </div>
+</div>
