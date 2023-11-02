@@ -15,7 +15,6 @@ export async function getStaticPaths() {
     const Title = story.node.title;
     const Body = story.node.body; // TODO: Break this down into Markdown
     const Image = story.node.imgSrc; // TODO: Break this down into Markdown
-    console.log(Body)
     return {
       params: { Slug },
       props: { Slug, Title, Body, Image },

@@ -6,7 +6,6 @@ import { client } from '../../tina/__generated__/client';
 import {TinaMarkdown} from "tinacms/dist/rich-text";
 
 const aboutContent = await client.queries.page({relativePath: 'About.md'});
-console.log(aboutContent.data.page.cta)
 const image_url = "../images/Almost-Home-1.jpeg";
 const quotes = [
     {

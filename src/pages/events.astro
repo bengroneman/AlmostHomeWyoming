@@ -9,7 +9,6 @@ const eventsResponse = await client.queries.eventConnection()
 const events = eventsResponse.data.eventConnection.edges.map(event => {
   return event.node
 });
-console.log(events)
 ---
 
 <Layout title="Almost Home Wyoming - Events">

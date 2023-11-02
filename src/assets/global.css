@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 .paragraph > p {
-    @apply mt-6 text-lg leading-8 text-gray-600;
+    @apply mt-6 text-xl leading-8 text-gray-600 mx-2;
 }
 .paragraph > p > strong {
     @apply decoration-purple-600 underline font-normal;

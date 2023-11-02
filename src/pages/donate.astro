@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.svelte';
 import { client } from '../../tina/__generated__/client';
 import DonationIframe from '../components/DonationIframe.svelte';
+import {TinaMarkdown} from "tinacms/dist/rich-text";
 
 const donateContent = await client.queries.page({relativePath: 'Donate.md'});
 
@@ -18,7 +19,6 @@ const image_url = "../images/Almost-Home-1.jpeg";
           alt="almost home yard sale event with family"
         />
         <div class="bg-white my-8 max-w-fit mx-auto shadow overflow-hidden sm:rounded-lg">
-
         <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
           Ways to donate
@@ -44,13 +44,14 @@ const image_url = "../images/Almost-Home-1.jpeg";
             </dd>
           </div>
         </dl>
+        <TinaMarkdown content={donateContent.data.page.cta} class="paragraph" />
       </div>
     </div>
       </div>
       <div class="lg:col-start-2 lg:pl-8">
         <div class="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0">
           <h2 class="leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
-              {donateContent.data.page.subTitle}
+            {donateContent.data.page.subTitle}
           </h2>
           <DonationIframe/>
         </div>
