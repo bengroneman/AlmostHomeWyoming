@@ -28,7 +28,7 @@
   let navToggled = false;
 </script>
 
-<nav class="bg-t-teal">
+<nav class="bg-t-teal" data-testid="header-navigation">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <div class="flex items-center">

@@ -1,13 +1,14 @@
 import { test, expect } from '@playwright/test';
-
-const URL = "http://localhost:3000/contact";
+import { URL } from './testutils.js';
 
 test('Contact page has correct title', async ({ page }) => {
   await page.goto(URL);
+  await page.getByTestId('header-navigation').getByRole("link", {name: "Contact"}).click()
+  await page.waitForLoadState()
   await expect(page).toHaveTitle("Contact Almost Home Wyoming");
 });
 
-test('Conatact page looks the same visually', async({page}) => {
+test('Contact page looks the same visually', async({page}) => {
   await page.goto(URL);
   await expect(page).toHaveScreenshot()
 });

@@ -1,12 +1,15 @@
 @tailwind base;
 @tailwind components;
 .paragraph > p {
-    @apply mt-6 text-lg leading-8 text-gray-600;
+    @apply mt-6 text-lg leading-8 text-gray-600 prose prose-lg prose-indigo mx-auto;
 }
 .paragraph > p > strong {
     @apply decoration-purple-600 underline font-normal;
 }
 .paragraph > h2 {
     @apply text-3xl font-bold tracking-tight text-gray-900;
+}
+.paragraph > h1 {
+    @apply text-4xl font-bold tracking-tight text-gray-900;
 }
 @tailwind utilities;
