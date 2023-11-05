@@ -11,6 +11,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
   root: './src',
   integrations: [tailwind(), svelte(), react()],
 });

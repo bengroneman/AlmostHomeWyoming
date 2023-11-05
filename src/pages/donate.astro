@@ -50,7 +50,7 @@ const image_url = "../images/Almost-Home-1.jpeg";
       </div>
     </div>
     <div class="paragraph mx-auto w-full max-w-xl lg:mx-0">
-      <TinaMarkdown content={donateContent.data.page.cta} client:only="react" class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500"></TinaMarkdown>
+      <TinaMarkdown content={donateContent.data.page.cta}></TinaMarkdown>
     </div>
   </div>
   <div class="lg:col-start-2 lg:pl-8">
@@ -64,3 +64,8 @@ const image_url = "../images/Almost-Home-1.jpeg";
 </div>
 <VideoCTA />
 </Layout>
+<style>
+  .paragraph > p {
+    @apply mt-6 text-lg leading-8 text-gray-600 prose prose-lg prose-indigo mx-auto;
+  }
+</style>
