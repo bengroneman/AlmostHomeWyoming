@@ -13,6 +13,7 @@ import HeartHouse from "../images/HouseHeart.svg";
 import VideoCTA from "../components/VideoCTA.svelte";
 import { client } from '../../tina/__generated__/client';
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import Banner from '../components/Banner.svelte';
 
 
 const homeContent = await client.queries.page({relativePath: 'Home.md'});
@@ -90,10 +91,15 @@ const stories = postsResponse.data.postConnection.edges.map(post => {
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
               <div class="paragraph mx-auto w-full max-w-xl lg:mx-0">
-                <TinaMarkdown content={homeContent.data.page.cta} class="paragraph"/>
+                <h1 class="prose lg:prose-xl">Challenge for Charities 2024</h1>
+                <p class="prose">Dear Friends of Almost Home Wyoming,</p>
+                <p>The <a href="https://www.landercommunityfoundation.org/challenge-for-charities-overview">Lander Community Foundation’s Challenge for Charities</a> match event is happening now! Please consider making a donation so we can continue to serve those in our community who are homeless. We appreciate your support!</p>
+                <h3 class="prose lg:prose-xl">Here is how it works:</h3>
+                <p><em>You can write a check and send it to the Lander Community Foundation at P.O. Box 1131, Lander, WY, 82520.</em> <strong>Please note</strong>  that the check must be made to the LCF with a notation for Almost Home Wyoming for us to get the matching funds.</p>
+	            <p><em>You can go to the <a href="https://lander.fcsuite.com/erp/donate/list">Lander Community Foundation</a> and click on “Challenge For Charities” to donate online.</em> Please make sure you select Almost Home Wyoming as your chosen charity. Thank you!</p>
                 <div class="mt-8 flex items-center gap-x-6">
                   <a href="https://www.landercommunityfoundation.org/challenge-for-charities-overview" target="_blank" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Learn More</a>
-                  <a href="https://www.landercommunityfoundation.org/donate" class="text-sm font-semibold text-gray-900">Donate</a>
+                  <a href="https://lander.fcsuite.com/erp/donate/list" class="text-sm font-semibold text-gray-900">Donate</a>
                 </div>
               </div>
               <div class="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
