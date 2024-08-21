@@ -30,3 +30,7 @@ node_modules
 __generated__
 .idea/workspace.xml
 .idea/**
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
