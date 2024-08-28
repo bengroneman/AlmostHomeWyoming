@@ -5,9 +5,7 @@ import Card from '../components/Card.svelte';
 import Hero from '../components/Hero.svelte'
 import SecondaryBtn from '../components/global/SecondaryBtn.svelte';
 import image from "../../public/images/IMG-7107.jpg";
-import challengeForCharitiesLogo from "../../public/images/challenge-for-charities-logo.jpeg";
-import landerCommunityFoundationLogo from "../../public/images/LCF_Logo_Hor_RGB.png";
-import c4cCollage from "../../public/images/24-c4c-collage.jpeg";
+import c4cCollage from "../../public/images/Collage.jpg";
 import HeartHands from "../images/HearHands.svg";
 import HouseHand from "../images/HouseHand.svg";
 import HeartHouse from "../images/HouseHeart.svg";
@@ -93,11 +91,11 @@ const stories = postsResponse.data.postConnection.edges.map(post => {
                 <p class="prose"><em>Dear Friends of Almost Home Wyoming,</em></p>
                 <p>The <a href="https://www.landercommunityfoundation.org/challenge-for-charities-overview">Lander Community Foundation’s Challenge for Charities</a> match event has concluded as a huge success! Thank you kindly to our challenger donors, and all that participated to help us achieve our goals for 2024 and beyond.</p>
                 <p>Our entire community would like to extend our sincere gratitude to the Wyoming Community Foundation for the generous and much needed funding we recently received. It will be used to pay rent and deposit for our homeless friends in Fremont County. Your support is so appreciated! Thank you for all you do for Wyoming Communities!</p>
+                <p class="prose"><em>With gratitude, your Friends of Almost Home Wyoming</em></p>
               </div>
               <div class="mx-auto grid w-full max-w-xl grid-cols-1 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
                 <img class="max-h-full w-full object-contain object-left" src={c4cCollage} alt="Challenge for Charities collage from check hand off event">
               </div>
-              <p class="prose"><em>Sincerely, your Friends of Almost Home Wyoming,</em></p>
             </div>
           </div>
         </div>
