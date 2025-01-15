@@ -19,10 +19,6 @@
       name: "Stories",
       link: "/stories",
     },
-    {
-      name: "Events",
-      link: "/events"
-    },
   ];
 
   let navToggled = false;
